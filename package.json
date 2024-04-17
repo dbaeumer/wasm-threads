@@ -1,0 +1,11 @@
+{
+	"private": true,
+	"name": "wasm-threads",
+	"license": "MIT",
+	"scripts": {
+		"build:os": "cargo build",
+		"build:wasm": "cargo build --target wasm32-wasi-preview1-threads",
+		"run:wasmtime": "wasmtime --dir .::. --wasi threads=y --wasm threads=y target/wasm32-wasi-preview1-threads/debug/wasm-threads.wasm",
+		"run:os": "target/debug/wasm-threads"
+	}
+}
